@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_main);
+        final String sep = System.lineSeparator();
 
         final Button iLikeToast = findViewById(R.id.makeToast);
         iLikeToast.setOnClickListener(new View.OnClickListener() {
@@ -56,12 +57,12 @@ public class MainActivity extends AppCompatActivity {
                         .setContentText(notificationString)
                         .setPriority(NotificationCompat.PRIORITY_DEFAULT)
                         .setStyle(new NotificationCompat.BigTextStyle().bigText(
-                                "Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo."
+                                "Sed ut perspiciatis, unde omnis iste natus error sit " + sep + "voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa, quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt, explicabo."
                         ));
 
                 NotificationManagerCompat topShelfManager = NotificationManagerCompat.from(MainActivity.this);
                 topShelfManager.notify(topShelfNotificationId[0], topShelfNotification.build());
-                topShelfNotificationId[0] = topShelfNotificationId[0] + 10;
+                //topShelfNotificationId[0] = topShelfNotificationId[0] + 10;
 
             }
         });
